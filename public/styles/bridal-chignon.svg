@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Modern bridal chignon">
+  <rect width="420" height="280" fill="#f3eefb"/>
+  <circle cx="210" cy="116" r="52" fill="#d69a76"/>
+  <path d="M143 112c14-58 51-86 110-78 36 5 58 30 67 74-63-18-122-17-177 4z" fill="#231916"/>
+  <circle cx="210" cy="195" r="58" fill="#231916"/>
+  <path d="M154 185c33 31 71 42 115 33 25-5 44-17 57-36" fill="none" stroke="#6b4d44" stroke-width="14" stroke-linecap="round"/>
+  <path d="M120 108c32-29 67-42 105-40 35 2 66 15 93 39" fill="none" stroke="#f6f1e7" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="315" cy="94" r="8" fill="#f6f1e7"/>
+  <circle cx="101" cy="112" r="6" fill="#f6f1e7"/>
+</svg>

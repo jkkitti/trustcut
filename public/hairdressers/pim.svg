@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="390" viewBox="0 0 320 390" role="img" aria-label="Pimchanok Rattanaporn portrait">
+  <rect width="320" height="390" fill="#f3eefb"/>
+  <path d="M0 310c55-45 111-59 170-42 64 18 114 46 150 86v36H0z" fill="#c44e35" opacity=".14"/>
+  <path d="M93 157c0-66 29-106 76-106 50 0 78 39 78 108 0 73-27 113-80 113-50 0-74-38-74-115z" fill="#231916"/>
+  <circle cx="167" cy="166" r="55" fill="#d69a76"/>
+  <path d="M111 144c14-28 42-43 84-43 21 19 36 48 44 88 7-77-20-128-70-128-45 0-70 30-58 83z" fill="#231916"/>
+  <path d="M130 236h74l18 102H112z" fill="#d69a76"/>
+  <path d="M68 352c13-58 47-89 100-89 51 0 86 31 103 89z" fill="#f6f1e7"/>
+  <path d="M113 352c6-38 23-66 51-87 30 20 49 49 58 87z" fill="#18211f"/>
+  <circle cx="147" cy="166" r="5" fill="#18211f"/>
+  <circle cx="190" cy="166" r="5" fill="#18211f"/>
+  <path d="M152 201c13 10 27 10 39 0" fill="none" stroke="#7a3428" stroke-width="5" stroke-linecap="round"/>
+</svg>

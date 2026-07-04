@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Soft layer haircut">
+  <rect width="420" height="280" fill="#e9f7f2"/>
+  <circle cx="210" cy="122" r="56" fill="#d79b72"/>
+  <path d="M126 104c20-68 72-96 139-70 44 17 67 56 70 116-77-25-150-18-209 19z" fill="#3b241f"/>
+  <path d="M132 138c36 22 70 36 102 42 34 6 62 4 84-8-23 52-62 78-117 78-56 0-91-34-69-112z" fill="#3b241f"/>
+  <path d="M132 194c52 36 112 38 178 6" fill="none" stroke="#8d5f3f" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+  <rect x="30" y="228" width="360" height="16" fill="#158f7a" opacity=".25"/>
+</svg>

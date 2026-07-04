@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" role="img" aria-label="Mali ID card">
+  <rect width="320" height="200" rx="14" fill="#fff"/>
+  <rect x="0" y="0" width="320" height="48" rx="14" fill="#18211f"/>
+  <text x="22" y="31" font-family="Arial" font-size="18" font-weight="700" fill="#f6f1e7">TrustCut ID</text>
+  <rect x="22" y="68" width="78" height="96" fill="#e9f7f2"/>
+  <circle cx="61" cy="108" r="28" fill="#d79b72"/>
+  <path d="M34 102c5-31 21-47 48-47 21 0 34 16 38 44-24-10-52-9-86 3z" fill="#2f1f1b"/>
+  <rect x="120" y="76" width="156" height="10" fill="#dbe3df"/>
+  <rect x="120" y="102" width="120" height="10" fill="#dbe3df"/>
+  <rect x="120" y="128" width="142" height="10" fill="#dbe3df"/>
+  <rect x="120" y="154" width="96" height="10" fill="#158f7a"/>
+</svg>

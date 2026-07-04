@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" role="img" aria-label="Pimchanok ID card">
+  <rect width="320" height="200" rx="14" fill="#fff"/>
+  <rect width="320" height="48" rx="14" fill="#18211f"/>
+  <text x="22" y="31" font-family="Arial" font-size="18" font-weight="700" fill="#f6f1e7">TrustCut ID</text>
+  <rect x="22" y="68" width="78" height="96" fill="#f3eefb"/>
+  <circle cx="61" cy="110" r="28" fill="#d69a76"/>
+  <path d="M27 113c0-42 16-63 36-63 28 0 41 22 41 63-28-12-53-12-77 0z" fill="#231916"/>
+  <rect x="120" y="76" width="156" height="10" fill="#dbe3df"/>
+  <rect x="120" y="102" width="120" height="10" fill="#dbe3df"/>
+  <rect x="120" y="128" width="142" height="10" fill="#dbe3df"/>
+  <rect x="120" y="154" width="96" height="10" fill="#c44e35"/>
+</svg>

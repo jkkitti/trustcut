@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Low fade haircut">
+  <rect width="420" height="280" fill="#eef3f1"/>
+  <circle cx="210" cy="132" r="60" fill="#c88d63"/>
+  <path d="M143 114c16-58 54-84 112-78 35 4 56 25 64 64-61-17-120-12-176 14z" fill="#171717"/>
+  <path d="M147 136c20 34 73 41 151 21-6 45-38 77-86 77-51 0-82-34-65-98z" fill="#171717" opacity=".18"/>
+  <path d="M124 162c57 24 116 25 176 2" fill="none" stroke="#18211f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M141 196c42 21 88 22 138 2" fill="none" stroke="#6c7772" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+</svg>

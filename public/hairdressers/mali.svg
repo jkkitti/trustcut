@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="390" viewBox="0 0 320 390" role="img" aria-label="Mali Kanchana portrait">
+  <rect width="320" height="390" fill="#e9f7f2"/>
+  <path d="M0 296c62-42 128-56 198-42 48 9 88 35 122 76v60H0z" fill="#158f7a" opacity=".16"/>
+  <circle cx="160" cy="142" r="72" fill="#2f1f1b"/>
+  <path d="M98 158c4-66 30-104 78-104 42 0 68 31 72 96-32-19-71-21-150 8z" fill="#38241f"/>
+  <circle cx="160" cy="165" r="55" fill="#d79b72"/>
+  <path d="M122 156c18-18 45-27 88-28 8 16 9 31 6 45l34-9c-1 60-34 93-90 93-58 0-92-34-92-94z" fill="#2f1f1b" opacity=".16"/>
+  <path d="M121 236h78l14 98H108z" fill="#d79b72"/>
+  <path d="M78 350c8-54 42-86 82-86 42 0 76 32 84 86z" fill="#18211f"/>
+  <path d="M118 268c18 24 63 24 84 0" fill="none" stroke="#f6f1e7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="140" cy="164" r="5" fill="#18211f"/>
+  <circle cx="184" cy="164" r="5" fill="#18211f"/>
+  <path d="M146 200c12 9 27 9 39 0" fill="none" stroke="#6b3127" stroke-width="5" stroke-linecap="round"/>
+</svg>

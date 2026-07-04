@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="390" viewBox="0 0 320 390" role="img" aria-label="Krit Suwan portrait">
+  <rect width="320" height="390" fill="#ecf1ff"/>
+  <path d="M0 314c58-40 120-54 185-40 57 12 102 39 135 79v37H0z" fill="#4157a8" opacity=".15"/>
+  <path d="M101 124c10-52 42-78 93-78 38 0 62 30 62 80-45-22-94-22-155-2z" fill="#5b2b1c"/>
+  <path d="M113 112c24-35 62-52 116-50-19 30-58 52-116 50z" fill="#c44e35"/>
+  <circle cx="166" cy="166" r="56" fill="#cb8d63"/>
+  <path d="M111 145c26-17 62-25 108-22 5 29 18 50 39 63-3-58-31-94-83-108-41-10-67 11-64 67z" fill="#5b2b1c"/>
+  <path d="M130 236h72l18 102H112z" fill="#cb8d63"/>
+  <path d="M72 352c14-58 46-89 96-89 49 0 83 31 101 89z" fill="#18211f"/>
+  <path d="M119 286c21 14 72 14 94 0" fill="none" stroke="#28d0a7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="146" cy="167" r="5" fill="#18211f"/>
+  <circle cx="190" cy="167" r="5" fill="#18211f"/>
+  <path d="M152 201c11 9 27 9 39 0" fill="none" stroke="#653523" stroke-width="5" stroke-linecap="round"/>
+</svg>

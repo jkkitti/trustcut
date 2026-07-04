@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" role="img" aria-label="Krit ID card">
+  <rect width="320" height="200" rx="14" fill="#fff"/>
+  <rect width="320" height="48" rx="14" fill="#18211f"/>
+  <text x="22" y="31" font-family="Arial" font-size="18" font-weight="700" fill="#f6f1e7">TrustCut ID</text>
+  <rect x="22" y="68" width="78" height="96" fill="#ecf1ff"/>
+  <circle cx="61" cy="110" r="28" fill="#cb8d63"/>
+  <path d="M29 93c12-30 35-42 70-34-13 20-35 32-70 34z" fill="#c44e35"/>
+  <path d="M31 96c12-26 32-38 61-36 18 2 29 16 33 39-30-9-61-10-94-3z" fill="#5b2b1c"/>
+  <rect x="120" y="76" width="156" height="10" fill="#dbe3df"/>
+  <rect x="120" y="102" width="120" height="10" fill="#dbe3df"/>
+  <rect x="120" y="128" width="142" height="10" fill="#dbe3df"/>
+  <rect x="120" y="154" width="96" height="10" fill="#28d0a7"/>
+</svg>

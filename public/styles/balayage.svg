@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Warm balayage hairstyle">
+  <rect width="420" height="280" fill="#fff8e7"/>
+  <circle cx="210" cy="112" r="50" fill="#d79b72"/>
+  <path d="M128 102c18-65 70-92 139-70 42 14 66 52 73 113-82-18-151-14-212 17z" fill="#4a2c1f"/>
+  <path d="M122 136c11 77 42 116 93 116 56 0 90-40 102-120-28 28-58 45-91 52-37 8-71-8-104-48z" fill="#4a2c1f"/>
+  <path d="M169 70c-12 51-11 112 3 183" stroke="#c98336" stroke-width="12" stroke-linecap="round" opacity=".78"/>
+  <path d="M252 65c8 67 2 126-19 177" stroke="#e6b55c" stroke-width="10" stroke-linecap="round" opacity=".72"/>
+  <path d="M304 100c-7 52-20 96-41 132" stroke="#d58a22" stroke-width="9" stroke-linecap="round" opacity=".65"/>
+</svg>

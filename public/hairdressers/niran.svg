@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="390" viewBox="0 0 320 390" role="img" aria-label="Niran Wongchai portrait">
+  <rect width="320" height="390" fill="#fff8e7"/>
+  <path d="M0 318c56-52 132-72 214-48 46 13 81 39 106 78v42H0z" fill="#d58a22" opacity=".18"/>
+  <path d="M100 119c9-54 38-81 82-75 38 5 60 32 63 80-36-17-86-18-145-5z" fill="#171717"/>
+  <circle cx="165" cy="165" r="58" fill="#c88d63"/>
+  <path d="M106 137c18-23 62-36 119-24 15 48 6 91-28 118 17-54 4-84-38-87-25-2-42 8-53 30z" fill="#171717"/>
+  <path d="M129 235h72l18 102H111z" fill="#c88d63"/>
+  <path d="M70 352c16-61 47-91 93-91 49 0 81 30 97 91z" fill="#263631"/>
+  <path d="M132 277c15 17 49 18 67 0" fill="none" stroke="#f6f1e7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="145" cy="165" r="5" fill="#18211f"/>
+  <circle cx="188" cy="165" r="5" fill="#18211f"/>
+  <path d="M151 203c11 8 25 8 36 0" fill="none" stroke="#5a2d23" stroke-width="5" stroke-linecap="round"/>
+  <path d="M140 219c16 13 42 13 57 0" fill="#171717"/>
+</svg>
