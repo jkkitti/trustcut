@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   Activity,
   AtSign,
@@ -15,12 +15,14 @@ import {
   Mail,
   MapPin,
   MessageSquare,
+  Moon,
   Phone,
   Plus,
   Search,
   Send,
   ShieldAlert,
   Star,
+  Sun,
   Trash2,
   UserPlus,
   Users,
@@ -37,6 +39,12 @@ import {
 import { AuthPanel } from "@/components/auth-panel";
 import { GeoVerification } from "@/components/geo-verification";
 import { TrustCutLogo } from "@/components/trustcut-logo";
+import {
+  isThemeMode,
+  PDPA_CONSENT_STORAGE_KEY,
+  THEME_STORAGE_KEY,
+  type ThemeMode,
+} from "@/lib/client-preferences";
 import type { Language, Translation } from "@/lib/i18n";
 import { languageOptions, translations } from "@/lib/i18n";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/browser";
@@ -80,7 +88,8 @@ const navItems: Array<{ id: ViewId; labelKey: keyof Translation; icon: typeof Se
 
 export function TrustCutApp({ initialHairdressers, adminSeed, initialIdentity }: TrustCutAppProps) {
   const [activeView, setActiveView] = useState<ViewId>("directory");
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("th");
+  const [theme, setTheme] = useState<ThemeMode>("light");
   const [oauthAuthenticated, setOauthAuthenticated] = useState(
     !isSupabaseBrowserConfigured() || Boolean(initialIdentity),
   );
@@ -106,6 +115,23 @@ export function TrustCutApp({ initialHairdressers, adminSeed, initialIdentity }:
     description: "",
     imageUrl: "",
   });
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setPdpaAccepted(window.localStorage.getItem(PDPA_CONSENT_STORAGE_KEY) === "true");
+      const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (isThemeMode(storedTheme)) {
+        setTheme(storedTheme);
+      }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  }, [theme]);
 
   const accessReady = oauthAuthenticated && pdpaAccepted && gpsVerified;
   const t = translations[language];
@@ -263,8 +289,18 @@ export function TrustCutApp({ initialHairdressers, adminSeed, initialIdentity }:
     }));
   }
 
+  function handlePdpaChange(accepted: boolean) {
+    setPdpaAccepted(accepted);
+    window.localStorage.setItem(PDPA_CONSENT_STORAGE_KEY, accepted ? "true" : "false");
+  }
+
+  function handleThemeChange(nextTheme: ThemeMode) {
+    setTheme(nextTheme);
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  }
+
   return (
-    <div className="min-h-screen bg-[#f5f7f4] text-[#18211f]">
+    <div data-theme={theme} className="min-h-screen bg-[#f5f7f4] text-[#18211f]">
       <header className="border-b border-[#dbe3df] bg-white">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 lg:px-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -321,7 +357,7 @@ export function TrustCutApp({ initialHairdressers, adminSeed, initialIdentity }:
               initialIdentity={initialIdentity}
               pdpaAccepted={pdpaAccepted}
               onAuthenticatedChange={setOauthAuthenticated}
-              onPdpaChange={setPdpaAccepted}
+              onPdpaChange={handlePdpaChange}
             />
             <GeoVerification language={language} onVerifiedChange={setGpsVerified} />
           </div>
@@ -391,7 +427,13 @@ export function TrustCutApp({ initialHairdressers, adminSeed, initialIdentity }:
           />
         )}
       </main>
-      <LanguageFooter language={language} onLanguageChange={setLanguage} t={t} />
+      <LanguageFooter
+        language={language}
+        onLanguageChange={setLanguage}
+        theme={theme}
+        onThemeChange={handleThemeChange}
+        t={t}
+      />
     </div>
   );
 }
@@ -408,36 +450,78 @@ function Metric({ label, value }: { label: string; value: string }) {
 function LanguageFooter({
   language,
   onLanguageChange,
+  theme,
+  onThemeChange,
   t,
 }: {
   language: Language;
   onLanguageChange: (language: Language) => void;
+  theme: ThemeMode;
+  onThemeChange: (theme: ThemeMode) => void;
   t: Translation;
 }) {
   return (
     <footer className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 pb-8 pt-2 lg:px-6">
-      <div className="flex flex-col gap-3 border border-[#dbe3df] bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold text-[#18211f]">{t.languageTitle}</p>
-          <p className="mt-1 text-xs leading-5 text-[#6c7772]">{t.languageHelp}</p>
+      <div className="grid gap-4 border border-[#dbe3df] bg-white p-4 shadow-sm md:grid-cols-2">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-[#18211f]">{t.languageTitle}</p>
+            <p className="mt-1 text-xs leading-5 text-[#6c7772]">{t.languageHelp}</p>
+          </div>
+          <div className="inline-grid grid-cols-2 gap-1 border border-[#dbe3df] bg-[#f5f7f4] p-1">
+            {languageOptions.map((option) => (
+              <button
+                key={option.code}
+                type="button"
+                onClick={() => onLanguageChange(option.code)}
+                className={cn(
+                  "h-10 px-4 text-sm font-semibold transition",
+                  language === option.code
+                    ? "bg-[#18211f] text-white"
+                    : "bg-transparent text-[#33413d] hover:bg-white",
+                )}
+                aria-pressed={language === option.code}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="inline-grid grid-cols-2 gap-1 border border-[#dbe3df] bg-[#f5f7f4] p-1">
-          {languageOptions.map((option) => (
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-[#18211f]">{t.themeTitle}</p>
+            <p className="mt-1 text-xs leading-5 text-[#6c7772]">{t.themeHelp}</p>
+          </div>
+          <div className="inline-grid grid-cols-2 gap-1 border border-[#dbe3df] bg-[#f5f7f4] p-1">
             <button
-              key={option.code}
               type="button"
-              onClick={() => onLanguageChange(option.code)}
+              onClick={() => onThemeChange("light")}
               className={cn(
-                "h-10 px-4 text-sm font-semibold transition",
-                language === option.code
+                "inline-flex h-10 items-center justify-center gap-2 px-4 text-sm font-semibold transition",
+                theme === "light"
                   ? "bg-[#18211f] text-white"
                   : "bg-transparent text-[#33413d] hover:bg-white",
               )}
-              aria-pressed={language === option.code}
+              aria-pressed={theme === "light"}
             >
-              {option.label}
+              <Sun className="h-4 w-4" aria-hidden />
+              {t.themeLight}
             </button>
-          ))}
+            <button
+              type="button"
+              onClick={() => onThemeChange("dark")}
+              className={cn(
+                "inline-flex h-10 items-center justify-center gap-2 px-4 text-sm font-semibold transition",
+                theme === "dark"
+                  ? "bg-[#18211f] text-white"
+                  : "bg-transparent text-[#33413d] hover:bg-white",
+              )}
+              aria-pressed={theme === "dark"}
+            >
+              <Moon className="h-4 w-4" aria-hidden />
+              {t.themeDark}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

@@ -2,9 +2,14 @@ import { TrustCutApp } from "@/components/trustcut-app";
 import { adminSeed, hairdressers } from "@/lib/sample-data";
 import { createSupabaseServerClient, hasSupabaseServerEnv } from "@/lib/supabase/server";
 import type { AuthIdentity } from "@/lib/types";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   const initialIdentity = await getInitialIdentity();
+
+  if (hasSupabaseServerEnv() && !initialIdentity) {
+    redirect("/login");
+  }
 
   return (
     <TrustCutApp

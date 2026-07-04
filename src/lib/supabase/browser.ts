@@ -3,13 +3,12 @@
 import { createBrowserClient } from "@supabase/ssr";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/supabase/database.types";
+import { getSupabaseAnonKey, getSupabaseUrl, hasSupabasePublicEnv } from "@/lib/supabase/env";
 
 let browserClient: SupabaseClient<Database> | null = null;
 
 export function isSupabaseBrowserConfigured() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  );
+  return hasSupabasePublicEnv();
 }
 
 export function getSupabaseBrowserClient() {
@@ -19,8 +18,8 @@ export function getSupabaseBrowserClient() {
 
   if (!browserClient) {
     browserClient = createBrowserClient<Database>(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      getSupabaseUrl(),
+      getSupabaseAnonKey(),
     );
   }
 

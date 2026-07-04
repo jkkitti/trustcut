@@ -102,6 +102,7 @@ export function AuthPanel({
     await supabase.auth.signOut();
     setIdentity(null);
     onAuthenticatedChange(false);
+    window.location.assign("/login");
   }
 
   return (
