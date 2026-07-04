@@ -61,6 +61,7 @@ export function LoginPage({ supabaseConfigured }: LoginPageProps) {
     }
 
     if (!configured) {
+      document.cookie = "trustcut-demo-access=true; path=/; max-age=86400; SameSite=Lax";
       window.location.assign("/");
       return;
     }

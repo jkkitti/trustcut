@@ -2,12 +2,14 @@ import { TrustCutApp } from "@/components/trustcut-app";
 import { adminSeed, hairdressers } from "@/lib/sample-data";
 import { createSupabaseServerClient, hasSupabaseServerEnv } from "@/lib/supabase/server";
 import type { AuthIdentity } from "@/lib/types";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
   const initialIdentity = await getInitialIdentity();
+  const demoAccess = await hasDemoAccess();
 
-  if (hasSupabaseServerEnv() && !initialIdentity) {
+  if (!initialIdentity && !demoAccess) {
     redirect("/login");
   }
 
@@ -18,6 +20,15 @@ export default async function Home() {
       initialIdentity={initialIdentity}
     />
   );
+}
+
+async function hasDemoAccess() {
+  if (hasSupabaseServerEnv()) {
+    return false;
+  }
+
+  const cookieStore = await cookies();
+  return cookieStore.get("trustcut-demo-access")?.value === "true";
 }
 
 async function getInitialIdentity(): Promise<AuthIdentity | null> {

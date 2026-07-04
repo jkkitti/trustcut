@@ -69,12 +69,14 @@ If Google OAuth works locally but not on Vercel, verify these production setting
 
 ## Google OAuth Flow
 
+- Visitors open `/` and are redirected to `/login` before the dashboard is shown.
 - The owner clicks `Continue with Google`.
 - Supabase redirects to Google and then back to `/auth/callback`.
 - `/auth/callback` exchanges the OAuth code for a Supabase session.
 - `src/proxy.ts` refreshes the Supabase session cookies during navigation.
 - The app unlocks protected data only after Google OAuth, PDPA consent, and GPS verification are all complete.
 - If `SUPABASE_SERVICE_ROLE_KEY` is set, the callback creates a pending `profiles` row for new Google users so admins can approve them later.
+- Without Supabase env values, `/login` can set a temporary demo cookie before opening the demo dashboard.
 
 ## App Areas
 
