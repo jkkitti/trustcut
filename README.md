@@ -41,15 +41,31 @@ TRUSTCUT_ALLOWED_GEOFENCES=[{"name":"Sukhumvit Cut Lab","lat":13.736717,"lng":10
 2. Run `supabase/schema.sql` in the Supabase SQL editor.
 3. Optional: run `supabase/seed.sql` to load mock hairdressers, comments, style posts, PDPA consent records, and usage events.
 4. In Google Cloud Console, create an OAuth 2.0 Client ID for a web app.
-5. Add this Google authorized redirect URI:
+5. In Google Cloud Console, add authorized JavaScript origins:
+   - `http://localhost:3000`
+   - `https://your-vercel-domain.vercel.app`
+6. Add this Google authorized redirect URI:
    - `https://YOUR_SUPABASE_PROJECT_REF.supabase.co/auth/v1/callback`
-6. In Supabase Auth providers, enable Google and paste the Google Client ID and Client Secret.
-7. In Supabase Auth URL configuration, set the Site URL and add redirect URLs:
+7. In Supabase Auth providers, enable Google and paste the Google Client ID and Client Secret.
+8. In Supabase Auth URL configuration, set the Site URL and add redirect URLs:
    - `http://localhost:3000`
    - `https://your-vercel-domain.vercel.app`
    - `http://localhost:3000/auth/callback`
    - `https://your-vercel-domain.vercel.app/auth/callback`
-8. Add environment variables to `.env.local` and Vercel.
+9. For Vercel preview deployments, add a wildcard redirect URL only if you use preview links:
+   - `https://*.vercel.app/auth/callback`
+10. Add environment variables to `.env.local` and Vercel.
+
+## Vercel OAuth Checklist
+
+If Google OAuth works locally but not on Vercel, verify these production settings:
+
+- Vercel Environment Variables include `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` for Production, then redeploy.
+- Supabase Authentication > URL Configuration uses your production Vercel URL as the Site URL.
+- Supabase Redirect URLs include the exact callback URL: `https://your-vercel-domain.vercel.app/auth/callback`.
+- Google Cloud Console Authorized JavaScript origins include your Vercel origin: `https://your-vercel-domain.vercel.app`.
+- Google Cloud Console Authorized redirect URIs include the Supabase callback URL, not your app callback URL: `https://YOUR_SUPABASE_PROJECT_REF.supabase.co/auth/v1/callback`.
+- If you switch to a custom domain, add that custom domain in both Supabase Redirect URLs and Google JavaScript origins.
 
 ## Google OAuth Flow
 
